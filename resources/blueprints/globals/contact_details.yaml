@@ -1,0 +1,53 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: email
+        field:
+          placeholder: Email
+          input_type: text
+          antlers: true
+          display: Email
+          type: text
+          icon: text
+          instructions: Email
+          listable: hidden
+      -
+        handle: phone
+        field:
+          placeholder: 'Phone Number'
+          input_type: text
+          antlers: true
+          display: Phone
+          type: text
+          icon: text
+          instructions: 'Phone Number'
+          listable: hidden
+  social:
+    display: Social
+    fields:
+      -
+        handle: facebook
+        field:
+          display: Facebook
+          type: link
+          icon: link
+          instructions: www.facebook.com/something
+          listable: hidden
+      -
+        handle: instagram
+        field:
+          display: Instagram
+          type: link
+          icon: link
+          instructions: www.instagram.com/something
+          listable: hidden
+      -
+        handle: linkedin
+        field:
+          display: LinkedIn
+          type: link
+          icon: link
+          instructions: www.linkedin.com/something
+          listable: hidden

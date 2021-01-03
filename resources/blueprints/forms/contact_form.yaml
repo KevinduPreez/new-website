@@ -1,0 +1,50 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: first_name
+        field:
+          placeholder: 'John / Jane'
+          input_type: text
+          antlers: true
+          display: 'First Name'
+          type: text
+          icon: text
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: last_name
+        field:
+          placeholder: Doe
+          input_type: text
+          antlers: true
+          display: 'Last Name'
+          type: text
+          icon: text
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: email
+        field:
+          placeholder: something@youremail.com
+          input_type: text
+          antlers: true
+          display: Email
+          type: text
+          icon: text
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: message
+        field:
+          antlers: true
+          display: Message
+          type: textarea
+          icon: textarea
+          listable: hidden
+          validate:
+            - required

@@ -1,0 +1,38 @@
+title: Projects
+fields:
+  -
+    handle: screenshot
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      display: Screenshot
+      type: assets
+      icon: assets
+      listable: hidden
+  -
+    handle: title
+    field:
+      input_type: text
+      antlers: true
+      display: Title
+      type: text
+      icon: text
+      listable: hidden
+  -
+    handle: description
+    field:
+      antlers: true
+      display: Description
+      type: textarea
+      icon: textarea
+      listable: hidden
+  -
+    handle: link
+    field:
+      display: Link
+      type: link
+      icon: link
+      listable: hidden
