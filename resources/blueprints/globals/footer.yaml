@@ -1,0 +1,22 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: copyright
+        field:
+          input_type: text
+          antlers: true
+          display: Copyright
+          type: text
+          icon: text
+          listable: hidden
+      -
+        handle: flair
+        field:
+          input_type: text
+          antlers: true
+          display: Flair
+          type: text
+          icon: text
+          listable: hidden

@@ -1,0 +1,24 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: logo
+        field:
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: Logo
+          type: assets
+          icon: assets
+          listable: hidden
+      -
+        handle: alt_tag
+        field:
+          input_type: text
+          antlers: false
+          display: 'Alt Tag'
+          type: text
+          icon: text
+          listable: hidden

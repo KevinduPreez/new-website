@@ -1,19 +1,23 @@
 <!doctype html>
 <html lang="{{ site:short_locale }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title ?? site:name }}</title>
-        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
-    </head>
-    {{ partial:nav }}
-    <body class="bg-gray-200 font-sans leading-normal text-grey-800">
-        <div class="mx-auto px-2 h-screen flex ">
-            {{ template_content }}
-        </div>
-        <script src="{{ mix src='/js/site.js' }}"></script>
-    </body>
-    {{partial:footer}}
-                        <br>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title ?? site:name }}</title>
+    <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+</head>
+{{ partial:nav }}
+<body class="bg-gray-200 font-sans leading-normal text-grey-800">
+    <div class="mx-auto flex ">
+        {{ template_content }}
+    </div>
+    <script src="{{ mix src='/js/site.js' }}"></script>
+</body>
+{{partial:footer}}
+<br>
+
 </html>
