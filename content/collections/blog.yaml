@@ -1,0 +1,18 @@
+title: Blog
+template: default
+layout: layout
+revisions: false
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false
+  tree:
+    -
+      entry: 78a5c193-d6c3-4d0e-8227-20bbd3901363
+    -
+      entry: 6cb4df62-d824-4454-81ca-4a5cb96d297f
+    -
+      entry: ac129533-a4db-4efb-8769-ecf60b59f0fd

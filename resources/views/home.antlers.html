@@ -1,5 +1,5 @@
 <div class="relative">
-    <div class="flex absolute items-center" style="height: 100%">
+    <div class="flex absolute items-center">
         <div class="flex item-centre justify-end w-screen">
             <div class="bg-blue-200 p-8 m-10">
                 {{ content }}
@@ -7,8 +7,12 @@
         </div>
     </div>
     {{ landing_image }}
-    <div class="h-screen">
+    <div class="">
         <img src="{{ url }}" alt="{{ alt }}">
     </div>
     {{ /landing_image }}
+    <div class="w-screen text-center">
+        <h2 class="flex w-screen text-center p-10">Recent Blog Post</h2>
+        {{ partial:blog-preview sort="date:desc"}}
+    </div>
 </div>
