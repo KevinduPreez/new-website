@@ -1,4 +1,5 @@
-<!-- <div class="bg-blue-200 p-0 m-0">
+<!-- 
+<div class="bg-blue-200 p-0 m-0">
 	<div>
 		<h3>Contact</h3>
 		<p>Something</p>
@@ -9,9 +10,13 @@
 	</div>
 </div>
 -->
-<footer class="site-footer bg-indigo-700">
-    <p>{{ footer:copyright }}</p>
-    <p class="text-sm">{{ footer:flair }}</p>
-    <p class="text-xl font-light">Socials</p>
-    {{partial:socials}}
+<footer class="flex justify-center bg-indigo-700">
+    <div class="text-center p-6 m-6">
+        <p class="text-sm p-1">{{ footer:flair }}</p>
+        <p class="text-sm p-1"><i class="far fa-paper-plane"></i> <a href="mailto:{{ contact_details:email }}">{{ contact_details:email }}</a></p>
+        <i class="fas fa-bullhorn"></i>
+        {{partial:socials-dark}}
+        <hr class="p-1">
+        <p class="text-sm p-1">{{ footer:copyright }}</p>
+    </div>
 </footer>

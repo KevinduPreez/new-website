@@ -1,27 +1,92 @@
-<nav class="bg-blue-500">
-    <div class="hidden sm:block sm:ml-6">
-        <div class="flex space-x-4 justify-between">
-            <div class=" flex items-center w-1/3 p-4">
-                {{ logo_image }}
-                <a href="{{ homepage }}">
-                    <img src="{{ logo }}" alt="{{ alt_tag }}" class="w-5/6">
-                </a>
-                {{ /logo_image }}
+<nav class="bg-indigo-700">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-16">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <!-- Mobile menu button-->
+                <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false" id="mobileButton" onclick="clicked()">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Icon when menu is closed. -->
+                    <!--
+            Heroicon name: menu
+
+            Menu open: "hidden", Menu closed: "block"
+          -->
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Icon when menu is open. -->
+                    <!--
+            Heroicon name: x
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+                    <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
-            <!-- -->
-            <div class="flex justify-centre w-1/3 text-center">
-                <ul class="flex  w-1/3">
-                    {{collection:pages}}
-                    <li class="flex items-center text-gray-100 active:bg-indigo-800 hover:bg-indigo-700 hover:text-white px-3 py-2 text-sm">
-                        <a href="{{ url }}">{{ title }}</a>
-                    </li>
-                    {{/collection:pages}}
-                </ul>
+            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex-shrink-0 flex items-center max-w-xs p-4 logoClass">
+                    {{ logo_image }}
+                    <a href="{{ homepage }}">
+                        <img src="{{ logo }}" alt="{{ alt_tag }}" class="w-5/6 logo">
+                    </a>
+                    {{ /logo_image }}
+                </div>
+                <div class="hidden sm:block sm:ml-6">
+                    <div class="flex space-x-4">
+                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                        <ul class="flex  w-1/3">
+                            {{collection:pages}}
+                            <a href="{{ url }}">
+                                <li class="flex items-center text-gray-100 active:bg-blue-500 hover:bg-blue-400 hover:text-white px-3 py-5 text-sm">
+                                    {{ title }}
+                                </li>
+                            </a>
+                            {{/collection:pages}}
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <!-- -->
-            <div class="flex justify-end w-1/3 p-4">
-                {{partial:socials}}
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            
+                {{partial:socials-dark}}
+                
             </div>
         </div>
     </div>
+    <!--
+    Mobile menu, toggle classes based on menu state.
+
+    Menu open: "block", Menu closed: "hidden"
+  -->
+    <div class=" hidden sm:hidden" id="mobileNav">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <ul class="flex  w-1/3">
+                {{collection:pages}}
+                <li class="flex items-center text-gray-100 active:bg-blue-500 hover:bg-blue-400 hover:text-white px-3 py-2 text-sm">
+                    <a href="{{ url }}">{{ title }}</a>
+                </li>
+                {{/collection:pages}}
+            </ul>
+        </div>
+    </div>
 </nav>
+<style>
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    .logoClass {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo{
+        padding-left: 2em;
+    }
+}
+</style>
+<script> 
+    function clicked(){
+        document.getElementById("mobileNav").classList.toggle('hidden')
+    }
+</script>

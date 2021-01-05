@@ -1,18 +1,59 @@
 <div class="relative">
-    <div class="flex absolute items-center">
-        <div class="flex item-centre justify-end w-screen">
-            <div class="bg-blue-200 p-8 m-10">
-                {{ content }}
-            </div>
+    <div class="flex item-centre absolute item-end justify-end w-screen z-40">
+        <div class="bg-blue-200 p-8 m-10 shadow-2xl clippedContent slide-right">
+            {{ content }}
         </div>
     </div>
     {{ landing_image }}
-    <div class="">
+    <div class="clipping z-50">
         <img src="{{ url }}" alt="{{ alt }}">
     </div>
     {{ /landing_image }}
-    <div class="w-screen text-center">
-        <h2 class="flex w-screen text-center p-10">Recent Blog Post</h2>
+    <div class="w-screen pt-10">
+        <h1 class="w-screen text-center">Recent Posts</h1>
         {{ partial:blog-preview sort="date:desc"}}
     </div>
 </div>
+
+<style>
+h1 {
+    font-size: 2.5em;
+}
+
+.clippedContent {
+    clip-path: polygon(0 0, 70% 0%, 100% 29%, 100% 100%, 70% 100%, 34% 100%, 0% 70%, 0% 30%);
+}
+
+.clipping {
+    -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 49%, 54% 87%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0, 100% 65%, 60% 90%, 0% 100%);
+}
+
+.slide-right {
+        animation-name: moveme;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes moveme {
+        0% {
+            transform: translate(0, 0)
+        }
+
+        25% {
+            transform: translate(-2px, -3px)
+        }
+
+        50% {
+            transform: translate(-1px, -2px)
+        }
+        75% {
+            transform: translate(-2px, -3px)
+        }
+
+
+
+    }
